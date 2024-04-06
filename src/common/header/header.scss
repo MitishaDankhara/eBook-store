@@ -1,0 +1,70 @@
+@import "../../style/global.scss";
+header {
+  padding: 28px 0px;
+  .header_alignment {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    .header_logo {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      img {
+        width: 270px;
+        height: 50px;
+        object-fit: cover;
+      }
+    }
+    .header_menu {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 22px;
+          @include pointer();
+          color: var(--color1);
+          &:hover {
+            color: var(--red);
+          }
+        }
+      }
+    }
+    .header_btn {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+
+      .login_btn {
+        padding: 12px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        @include pointer();
+        color: var(--white);
+        border-radius: 12px;
+        background-color: var(--btn_bg);
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      .signup_btn {
+        padding: 12px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        @include pointer();
+        color: var(--color1);
+        border-radius: 12px;
+        &:hover {
+          background-color: var(--btn_bg);
+          color: var(--white);
+        }
+      }
+    }
+  }
+}

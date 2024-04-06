@@ -1,0 +1,104 @@
+// @import "../../style/global.scss";
+// .Login_page {
+//   .Login_form {
+//     border: 1px solid #000;
+//     margin: 0 auto;
+//     padding: 30px;
+//     width: 50%;
+//     .input {
+//       padding: 8px;
+//       margin: 4px;
+//       font-size: 20px;
+//       width: 96%;
+//       border: none;
+//       border-bottom: 1px solid #000;
+//       &:focus {
+//         outline: none;
+//         &::placeholder {
+//           color: var(--white);
+//         }
+//       }
+//     }
+//     .btn {
+//       text-align: center;
+//       margin: 30px auto 0px;
+//       padding: 10px 30px;
+//       border: 1px solid #000;
+//       width: fit-content;
+//       @include pointer();
+//     }
+//     .sign_up {
+//       text-align: center;
+//       padding: 10px 0px;
+//       span {
+//         text-decoration: underline;
+//         &:hover {
+//           text-decoration: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// login.scss
+
+.Login_page {
+  height: calc(100vh - 170px);
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  .Login_form {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 40px;
+    width: 50%;
+    margin: 0 auto;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .input {
+        width: 98%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 20px;
+        &:focus {
+          outline: none;
+          &::placeholder {
+            color: var(--white);
+          }
+        }
+      }
+
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 0;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      .sign_up {
+        margin-top: 10px;
+        span {
+          color: #007bff;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
