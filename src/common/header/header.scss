@@ -1,26 +1,30 @@
 @import "../../style/global.scss";
 header {
   padding: 28px 0px;
+  // position: relative;
   .header_alignment {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
     .header_logo {
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
       gap: 30px;
       img {
         width: 270px;
         height: 50px;
         object-fit: cover;
+        cursor: pointer;
       }
     }
     .header_menu {
       ul {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 32px;
         li {
           display: flex;
           align-items: center;
@@ -37,6 +41,7 @@ header {
     .header_btn {
       display: flex;
       gap: 10px;
+      align-items: center;
       justify-content: flex-end;
 
       .login_btn {
@@ -63,6 +68,49 @@ header {
         &:hover {
           background-color: var(--btn_bg);
           color: var(--white);
+        }
+      }
+      .search_icon {
+        @include pointer();
+      }
+    }
+    .search_bar {
+      position: absolute;
+      bottom: -70px;
+      left: 0px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      visibility: hidden;
+      &.active {
+        visibility: visible;
+      }
+      input {
+        background: var(--search_bar);
+        border-radius: 12px;
+        width: 100%;
+        padding: 16px 20px;
+        border: none;
+        font-size: 20px;
+        color: var(--color2);
+        &:focus {
+          outline: none;
+          &::placeholder {
+            color: var(--search_bar);
+          }
+        }
+        &::placeholder {
+          font-size: 20px;
+        }
+      }
+      .close_icon {
+        padding: 12px;
+        svg {
+          padding: 16px;
+          background-color: var(--btn_bg);
+          border-radius: 12px;
+          margin-top: 3px;
         }
       }
     }

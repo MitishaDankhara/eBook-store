@@ -1,0 +1,44 @@
+@import "../../../style/global.scss";
+.hero_section {
+  background-color: var(--hero_bg);
+  .herobanner_grid {
+    height: calc(100vh - 115px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    .herobanner_grid_item {
+      .hero_text {
+        max-width: 660px;
+        p {
+          color: var(--color3);
+          text-transform: uppercase;
+          font-size: 26px;
+          font-weight: 700;
+        }
+        h1 {
+          font-size: 56px;
+          font-weight: 700;
+          padding: 20px 0px 40px;
+          span {
+            font-weight: 900;
+          }
+        }
+        .hero_banner_btn {
+          text-transform: capitalize;
+          padding: 16px 48px;
+          font-size: 22px;
+          font-weight: 500;
+          background-color: var(--black);
+          color: var(--white);
+          width: fit-content;
+          @include pointer();
+        }
+      }
+      img {
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+}
