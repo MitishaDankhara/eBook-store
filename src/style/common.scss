@@ -9,10 +9,11 @@ p {
   padding: 0;
 }
 body {
-  font-family: Poppins, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-size: 16px;
   font-weight: 500;
+  color: var(--color1);
 }
 img {
   max-width: 100%;
@@ -23,7 +24,7 @@ a {
 }
 button,
 a {
-  font-family: Poppins, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 ul {
   display: flex;
@@ -34,6 +35,35 @@ ul {
   }
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color3);
+}
+
 @mixin pointer() {
   cursor: pointer;
+}
+
+@mixin description($line) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+@mixin transition() {
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }

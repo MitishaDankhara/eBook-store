@@ -1,7 +1,15 @@
 @import "../../style/global.scss";
 header {
   padding: 28px 0px;
-  // position: relative;
+  @include breakpoint("max-xl") {
+    padding: 20px 0px;
+  }
+  @include breakpoint("max-lg") {
+    padding: 16px 0px;
+  }
+  @include breakpoint("max-sm") {
+    padding: 12px 0px;
+  }
   .header_alignment {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -9,22 +17,40 @@ header {
     justify-content: space-between;
     position: relative;
     z-index: 1;
+    @include breakpoint("max-md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .header_logo {
-      // display: flex;
-      // align-items: center;
-      gap: 30px;
       img {
         width: 270px;
         height: 50px;
         object-fit: cover;
         cursor: pointer;
+        @include breakpoint("max-xl") {
+          width: 230px;
+        }
       }
     }
     .header_menu {
+      @include breakpoint("max-md") {
+        display: none;
+      }
       ul {
         display: flex;
         align-items: center;
-        gap: 32px;
+        justify-content: space-around;
+        @include breakpoint("max-xl") {
+          gap: 24px;
+        }
+        @include breakpoint("max-lg") {
+          gap: 20px;
+        }
+        @include breakpoint("max-sm") {
+          gap: 16px;
+        }
+        @include breakpoint("max-xs") {
+          gap: 12px;
+        }
         li {
           display: flex;
           align-items: center;
@@ -35,6 +61,18 @@ header {
           &:hover {
             color: var(--red);
           }
+          @include breakpoint("max-xl") {
+            font-size: 20px;
+          }
+          @include breakpoint("max-lg") {
+            font-size: 18px;
+          }
+          @include breakpoint("max-sm") {
+            font-size: 16px;
+          }
+          @include breakpoint("max-xs") {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -43,6 +81,12 @@ header {
       gap: 10px;
       align-items: center;
       justify-content: flex-end;
+      @include breakpoint("max-xl") {
+        gap: 8px;
+      }
+      @include breakpoint("max-sm") {
+        gap: 6px;
+      }
 
       .login_btn {
         padding: 12px 20px;
@@ -56,6 +100,24 @@ header {
         &:hover {
           opacity: 0.9;
         }
+        @include breakpoint("max-xl") {
+          padding: 10px 16px;
+          font-size: 18px;
+        }
+        @include breakpoint("max-lg") {
+          padding: 8px 14px;
+          font-size: 16px;
+        }
+        @include breakpoint("max-sm") {
+          padding: 6px 12px;
+          font-size: 14px;
+          font-weight: 500;
+          display: none;
+        }
+        @include breakpoint("max-xs") {
+          padding: 4px 10px;
+          font-size: 12px;
+        }
       }
       .signup_btn {
         padding: 12px 20px;
@@ -68,6 +130,24 @@ header {
         &:hover {
           background-color: var(--btn_bg);
           color: var(--white);
+        }
+        @include breakpoint("max-xl") {
+          padding: 10px 16px;
+          font-size: 18px;
+        }
+        @include breakpoint("max-lg") {
+          padding: 8px 14px;
+          font-size: 16px;
+        }
+        @include breakpoint("max-sm") {
+          padding: 6px 12px;
+          font-size: 14px;
+          font-weight: 500;
+          display: none;
+        }
+        @include breakpoint("max-xs") {
+          padding: 4px 10px;
+          font-size: 12px;
         }
       }
       .search_icon {

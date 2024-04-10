@@ -1,0 +1,88 @@
+@import "../../../style/global.scss";
+.Featured_Categories {
+  padding: 140px 0px;
+  @include breakpoint("max-lg") {
+    padding: 100px 0px;
+  }
+  @include breakpoint("max-md") {
+    padding: 80px 0px;
+  }
+  @include breakpoint("max-sm") {
+    padding: 50px 0px;
+  }
+  @include breakpoint("max-xs") {
+    padding: 35px 0px;
+  }
+  .feature_heading {
+    padding-bottom: 40px;
+    @include breakpoint("max-md") {
+      padding-bottom: 32px;
+    }
+    @include breakpoint("max-sm") {
+      padding-bottom: 26px;
+    }
+    @include breakpoint("max-xs") {
+      padding-bottom: 20px;
+    }
+    .heading {
+      font-size: 32px;
+      font-weight: 500;
+      @include breakpoint("max-lg") {
+        font-size: 30px;
+      }
+      @include breakpoint("max-md") {
+        font-size: 24px;
+      }
+      @include breakpoint("max-sm") {
+        font-size: 20px;
+      }
+      @include breakpoint("max-xs") {
+        font-size: 18px;
+      }
+    }
+  }
+  .category_card_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    .category_card {
+      padding: 28px;
+      border: 1px solid var(--color2);
+      text-align: center;
+      .card_heading {
+        @include description(1);
+        font-size: 22px;
+        font-weight: 500;
+        @include breakpoint("max-lg") {
+          font-size: 20px;
+        }
+        @include breakpoint("max-md") {
+          font-size: 18px;
+        }
+        @include breakpoint("max-sm") {
+          font-size: 16px;
+        }
+        @include breakpoint("max-xs") {
+          font-size: 14px;
+        }
+      }
+      p {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 400;
+        @include breakpoint("max-lg") {
+          font-size: 18px;
+        }
+        @include breakpoint("max-md") {
+          font-size: 16px;
+        }
+        @include breakpoint("max-sm") {
+          font-size: 14px;
+        }
+        @include breakpoint("max-xs") {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
