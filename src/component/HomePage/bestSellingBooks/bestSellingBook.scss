@@ -1,0 +1,125 @@
+@import "../../../style/global.scss";
+.best_selling_book {
+  padding-bottom: 140px;
+  @include breakpoint("max-lg") {
+    padding-bottom: 100px;
+  }
+  @include breakpoint("max-md") {
+    padding-bottom: 80px;
+  }
+  @include breakpoint("max-sm") {
+    padding-bottom: 50px;
+  }
+  @include breakpoint("max-xs") {
+    padding-bottom: 35px;
+  }
+  .best_selling_heading {
+    padding-bottom: 40px;
+    @include breakpoint("max-md") {
+      padding-bottom: 32px;
+    }
+    @include breakpoint("max-sm") {
+      padding-bottom: 26px;
+    }
+    @include breakpoint("max-xs") {
+      padding-bottom: 20px;
+    }
+    .heading {
+      font-size: 32px;
+      font-weight: 500;
+      @include breakpoint("max-lg") {
+        font-size: 30px;
+      }
+      @include breakpoint("max-md") {
+        font-size: 24px;
+      }
+      @include breakpoint("max-sm") {
+        font-size: 20px;
+      }
+      @include breakpoint("max-xs") {
+        font-size: 18px;
+      }
+    }
+  }
+  .best_selling_card_grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .best_selling_card_item {
+      border: 1px solid #eae8e4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px;
+      @include pointer();
+      @include transition();
+      width: calc(100% / 5 - 36px - 34px);
+      @include breakpoint("max-md") {
+        width: calc(100% / 3 - 70px);
+      }
+      @include breakpoint("max-sm") {
+        width: calc(100% / 2 - 70px);
+      }
+      @include breakpoint("max-xs") {
+        width: 100%;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(#777777, 0.6);
+      }
+
+      img {
+        margin: 0px 27px;
+        object-fit: cover;
+        @include breakpoint("max-sm") {
+        }
+      }
+
+      .card_desc {
+        padding-top: 16px;
+
+        .category {
+          font-size: 12px;
+          font-weight: 400;
+          text-transform: uppercase;
+          color: var(--red);
+          margin-bottom: 4px;
+        }
+
+        .book_title {
+          font-size: 18px;
+          font-weight: 400;
+          color: var(--color1);
+          margin-bottom: 4px;
+        }
+
+        .author_name {
+          font-size: 14px;
+          font-weight: 400;
+          color: var(--color2);
+          margin-bottom: 4px;
+        }
+
+        .price {
+          font-size: 18px;
+          color: var(--color1);
+
+          del {
+            font-size: 12px;
+            color: var(--color2);
+            padding-left: 8px;
+          }
+        }
+
+        .add_cart {
+          padding-top: 20px;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

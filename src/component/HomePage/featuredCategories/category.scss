@@ -42,13 +42,59 @@
     }
   }
   .category_card_grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    @include breakpoint("max-sm") {
+      gap: 15px;
+    }
+    @include breakpoint("max-xs") {
+      gap: 8px;
+    }
     .category_card {
-      padding: 28px;
-      border: 1px solid var(--color2);
+      width: calc(100% / 5 - 20px);
+      padding: 32px 0px;
+      border-radius: 6px;
+      @include pointer();
       text-align: center;
+      @include breakpoint("max-lg") {
+        padding: 28px 0px;
+      }
+      @include breakpoint("max-md") {
+        padding: 24px 0px;
+      }
+      @include breakpoint("max-sm") {
+        width: calc(100% / 3 - 38px);
+        padding: 20px 0px;
+      }
+      @include breakpoint("max-xs") {
+        width: calc(100% / 2 - 38px);
+        padding: 16px 0px;
+      }
+      @include breakpoint("max-xxs") {
+        width: 100%;
+      }
+      &:nth-child(1) {
+        background-color: #faf1ff;
+        color: #ad4de1;
+      }
+      &:nth-child(2) {
+        background-color: #faf4eb;
+        color: #de8f19;
+      }
+      &:nth-child(3) {
+        background-color: #f4e6e5;
+        color: #e4271a;
+      }
+      &:nth-child(4) {
+        background-color: #e6f2f4;
+        color: #1db8d3;
+      }
+      &:nth-child(5) {
+        background-color: #fff6f6;
+        color: #ec5f5f;
+      }
       .card_heading {
         @include description(1);
         font-size: 22px;

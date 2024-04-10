@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./header.scss";
-import HeaderLogo from "../../assets/logo/bookstore-logo.jpg";
+// import HeaderLogo from "../../assets/logo/bookstore-logo.jpg";
+import HeaderLogo from "../../assets/logo/Book_store_Logo_blue.png";
 import { Link } from "react-router-dom";
 export default function Header() {
   const [open, setOpen] = useState(false);
