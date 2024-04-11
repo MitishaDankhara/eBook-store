@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./header.scss";
 // import HeaderLogo from "../../assets/logo/bookstore-logo.jpg";
 import HeaderLogo from "../../assets/logo/Book_store_Logo_blue.png";
 import { Link } from "react-router-dom";
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 15) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const handleOnOpen = () => {
     setOpen(true);
   };
@@ -12,7 +26,7 @@ export default function Header() {
     setOpen(false);
   };
   return (
-    <header>
+    <header className={`${scroll ? "scroll" : ""}`}>
       <div className="container">
         <div className="header_alignment">
           <div className="header_logo">
